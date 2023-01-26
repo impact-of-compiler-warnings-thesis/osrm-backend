@@ -33,6 +33,8 @@ jobs:
         run: |
           mkdir build && cd build
           cmake .. -GNinja \
+                   -DCMAKE_C_COMPILER=clang \
+                   -DCMAKE_CXX_COMPILER=clang++ \
                    -DCMAKE_BUILD_TYPE=Debug \
                    -DENABLE_FUZZING=ON
       - name: Run build-wrapper
